@@ -1,0 +1,17 @@
+const { Given, When, Then } = require('@cucumber/cucumber');
+const { expect } = require('chai');
+
+let cart = [{ id: 1, name: 'Notebook', price: 1500 }]; // Simular um carrinho com produtos
+
+Given('que o usuário adicionou produtos ao carrinho', function () {
+  // Simular que produtos foram adicionados ao carrinho
+});
+
+When('o usuário navega até a tela de pagamento', function () {
+  // Simular a navegação para a tela de pagamento
+});
+
+Then('a tela de pagamento deve listar todos os produtos adicionados ao carrinho', function () {
+  expect(cart.length).to.be.greaterThan(0);
+  expect(cart[0].name).to.equal('Notebook');
+});
