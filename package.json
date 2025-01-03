@@ -1,0 +1,20 @@
+{
+  "name": "advantageonlineshopping",
+  "version": "1.0.0",
+  "description": "Este projeto contém testes automatizados para as funcionalidades web do Advantage Online Shopping. As implementações são fornecidas em JavaScript (usando Cucumber.js e Axios).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alcici/Web-para-Advantage-Online-Shopping.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alcici/Web-para-Advantage-Online-Shopping/issues"
+  },
+  "homepage": "https://github.com/Alcici/Web-para-Advantage-Online-Shopping#readme"
+}

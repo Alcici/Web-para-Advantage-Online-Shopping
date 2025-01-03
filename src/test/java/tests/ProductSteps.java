@@ -49,6 +49,39 @@ public class ProductSteps {
         try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
     }
 
+    @When("Clicar em usuario")
+    public void clicar_em_usuario() {
+        page.getByLabel("UserMenu").click();
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 2 segundos
+    }
+    @When("Acessar conta login")
+    public void Acessar_conta_login() {
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 2 segundos
+
+        page.locator("input[name='username']").fill("lucasalcici");
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
+
+        page.locator("label").filter(new Locator.FilterOptions().setHasText("Password")).click();
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
+
+        page.locator("input[name='password']").press("CapsLock");
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
+
+        page.locator("input[name='password']").fill("L");
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
+
+        page.locator("input[name='password']").press("CapsLock");
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
+
+        page.locator("input[name='password']").fill("Lu758801");
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
+
+        page.getByRole(AriaRole.CHECKBOX).check();
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
+
+        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("SIGN IN")).click();
+    }
+
     @After
     public void tearDown() {
         if (browser != null) {
