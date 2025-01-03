@@ -80,8 +80,26 @@ public class ProductSteps {
         try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 1 segundo
 
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("SIGN IN")).click();
-    }
 
+        try { Thread.sleep(5000); } catch (InterruptedException e) { e.printStackTrace(); }
+    }
+    @When ("conta com dados errados")
+public void conta_com_dados_errados() {
+        page.locator("input[name='username']").click();
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 2 segundos
+
+        page.locator("input[name='username']").fill("teste");
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 2 segundos
+
+        page.locator("input[name='password']").click();
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 2 segundos
+
+        page.locator("input[name='password']").fill("123");
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 2 segundos
+
+        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("SIGN IN")).click();
+        try { Thread.sleep(4000); } catch (InterruptedException e) { e.printStackTrace(); } // Pausa por 4 segundos
+    }
     @After
     public void tearDown() {
         if (browser != null) {

@@ -7,3 +7,4 @@ Feature: Buscar produto e colocar no carrinho
     And Selecionar o primeiro laptop
     And Adicionar ao carrinho
     And Ir para o checkout
+
