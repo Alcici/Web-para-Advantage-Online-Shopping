@@ -42,6 +42,37 @@ public class ProductSteps {
         pause(1000); // Pausa por 1 segundo
     }
 
+    @When("Clicar em nossos produtos")
+    public void Clicar_em_nossos_produtos() {
+        // Procurar em inglês
+        if (page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("OUR PRODUCTS")).isVisible()) {
+            page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("OUR PRODUCTS")).click();
+        }
+        // Procurar em português
+        else if (page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("NOSSOS PRODUTOS")).isVisible()) {
+            page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("NOSSOS PRODUTOS")).click();
+        }
+        // Caso nenhum dos links esteja visível
+        else {
+            System.out.println("Link 'OUR PRODUCTS' ou 'NOSSOS PRODUTOS' não encontrado.");
+        }
+    }
+    @And("Clicar em oferta especial")
+    public void Clicar_em_oferta_especial() {
+        page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("POPULAR ITEMS")).click();
+        pause(4000);
+    }
+    @And("Clicar em itens populares")
+    public void Clicar_em_itens_populares() {
+        page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("POPULAR ITEMS")).click();
+        pause(3000);
+    }
+    @Then("Clicar em contact us")
+    public void Clicar_em_contact_us() {
+        page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("CONTACT US")).click();
+        pause (6000);
+    }
+
     private void pause(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
