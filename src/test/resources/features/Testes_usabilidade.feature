@@ -1,5 +1,10 @@
 Feature: Buscar produto e colocar no carrinho
 
+Scenario: Realize a busca de um produto na aba de pesquisa
+  Given Navegar para o site
+  When Clicar no link "dvantage DEMO"
+  When Clicar em pesquisar + resultado da pesquisa
+
   Scenario: Buscar e preencher dados para um produto
     Given Navegar para o site
     When Clicar no link "dvantage DEMO"

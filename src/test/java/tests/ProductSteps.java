@@ -72,6 +72,29 @@ public class ProductSteps {
         page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("CONTACT US")).click();
         pause (6000);
     }
+    @When("Clicar em pesquisar + resultado da pesquisa")
+    public void Clicar_em_pesquisar() {
+        page.getByTitle("SEARCH").click();
+        pause(2000); // Pausa por 2 segundos
+
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Search")).press("CapsLock");
+        pause(2000); // Pausa por 2 segundos
+
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Search")).fill("L");
+        pause(2000); // Pausa por 2 segundos
+
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Search")).press("CapsLock");
+        pause(2000); // Pausa por 2 segundos
+
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Search")).fill("La");
+        pause(2000); // Pausa por 2 segundos
+
+        page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("laptops").setExact(true)).click();
+        pause(2000); // Pausa por 2 segundos
+
+        page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("HP ENVY - 17T TOUCH LAPTOP $")).click();
+        pause(2000); // Pausa por 2 segundos
+    }
 
     private void pause(int milliseconds) {
         try {
