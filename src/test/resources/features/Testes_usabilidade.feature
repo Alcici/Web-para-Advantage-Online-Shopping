@@ -5,7 +5,7 @@ Scenario: Realize a busca de um produto na aba de pesquisa
   When Clicar no link "dvantage DEMO"
   When Clicar em pesquisar + resultado da pesquisa
 
-  Scenario: Buscar e preencher dados para um produto
+  Scenario: Incluir produto no carrinho + Validar os produtos incluídos no carrinho na tela de pagamento
     Given Navegar para o site
     When Clicar no link "dvantage DEMO"
     And Clicar na categoria "Laptops"
